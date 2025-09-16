@@ -1,33 +1,29 @@
+// src/utils/fileHelper.js
 const fs = require('fs').promises;
-const path = require('path');
 
-class fileHelper {
+class FileHelper {
     static async readJSON(filePath) {
-        try{
-            const data = await fs.readFile(filePath, 'utf-8');
+        try {
+            const data = await fs.readFile(filePath, 'utf8');
             return JSON.parse(data);
         } catch (error) {
-            console.error('❌ Robô: "Ops! Não consegui ler este arquivo:", error');
-            return false;
+            // Se o arquivo não existir ou for inválido, retorna um array vazio
+            if (error.code === 'ENOENT') return []; 
+            console.error(`❌ Erro ao ler o arquivo JSON: ${filePath}`, error);
+            return null;
         }
     }
-    static async ensureDirectory(dirPath) {
+
+    static async writeJSON(filePath, data) {
         try {
-            await fs.mkdir(dirPath, {recursive: true});
-             return true;
-            } catch (error){
-            console.error('❌ Robô: "Ops! Não consegui salvar este arquivo:", error');
+            const jsonData = JSON.stringify(data, null, 2);
+            await fs.writeFile(filePath, jsonData, 'utf8');
+            return true;
+        } catch (error) {
+            console.error(`❌ Erro ao escrever o arquivo JSON: ${filePath}`, error);
             return false;
         }
-    }
-            static async ensureDirectory(dirPath){
-        try{
-        await FileSystem.mkdir(dirPath, {recursive: true});
-        return true;
-    } catch (error){
-        console.error('❌ Ops! Não consegui criar a pasta:', error);
-        return false;
-    }
     }
 }
+
 module.exports = FileHelper;

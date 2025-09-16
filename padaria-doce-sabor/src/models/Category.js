@@ -1,17 +1,16 @@
+// src/models/Category.js
 class Category {
     constructor(id, name, description, icon) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.icon = icon;
-
         this.active = true;
-        this.createdAt = new Date ();
-        this.productCount = 0
+        this.createdAt = new Date();
+        this.productCount = 0;
     }
 
     toJSON() {
-
         return {
             id: this.id,
             name: this.name,
@@ -23,34 +22,22 @@ class Category {
         };
     }
 
-    update (newData) {
-        if(newData.name) this.name = newData.name;
-        if(newData.description) this.description = newData.description;
-        if(newData.icon) this.icon = newData.icon;
-        if(newData.active !== undefined) this.active = newData.active;
+    update(newData) {
+        if (newData.name) this.name = newData.name;
+        if (newData.description) this.description = newData.description;
+        if (newData.icon) this.icon = newData.icon;
+        if (newData.active !== undefined) this.active = newData.active;
     }
 
-    addProduct () {
+    addProduct() {
         this.productCount++;
     }
 
     removeProduct() {
-        if (this.productCount > 0 ) {
+        if (this.productCount > 0) {
             this.productCount--;
         }
     }
 }
 
-module.exports = Category
-
-const Category = require('./models/Category');
-
-const secaoPaes = new Category(
-    1,
-    'Pães',
-    'Pães Frescos e quentinhos',
-    '🍞'
-);
-
-secaoPaes.addProduct();
-console.log('Quantos produtos temos?', secaoPaes.productCount);
+module.exports = Category;

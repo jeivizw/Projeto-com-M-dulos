@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Pães",
+    "description": "Pães frescos e artesanais.",
+    "icon": "🍞"
+  },
+  {
+    "id": 2,
+    "name": "Bolos",
+    "description": "Bolos caseiros para todas as ocasiões.",
+    "icon": "🎂"
+  },
+  {
+    "id": 3,
+    "name": "Doces",
+    "description": "Doces e sobremesas deliciosas.",
+    "icon": "🍬"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Pão Francês",
+    "description": "Pão fresquinho do dia.",
+    "price": 0.75,
+    "categoryId": 1,
+    "imageUrl": "pao-frances.jpg",
+    "available": true,
+    "createdAt": "2025-09-16T16:27:19.250Z",
+    "updatedAt": "2025-09-16T16:27:19.250Z"
+  },
+  {
+    "id": 2,
+    "name": "Bolo de Chocolate",
+    "description": "Bolo fofinho com cobertura de brigadeiro.",
+    "price": 25.5,
+    "categoryId": 2,
+    "imageUrl": "bolo-chocolate.jpg",
+    "available": true,
+    "createdAt": "2025-09-16T16:27:19.250Z",
+    "updatedAt": "2025-09-16T16:27:19.250Z"
+  },
+  {
+    "id": 3,
+    "name": "Sonho de Creme",
+    "description": "Massa fofinha com recheio de creme de baunilha.",
+    "price": 4.5,
+    "categoryId": 3,
+    "imageUrl": "sonho.jpg",
+    "available": true,
+    "createdAt": "2025-09-16T16:27:19.250Z",
+    "updatedAt": "2025-09-16T16:27:19.250Z"
+  },
+  {
+    "id": 4,
+    "name": "Sonho de Creme",
+    "description": "Massa fofinha com recheio de creme de baunilha.",
+    "price": 4.5,
+    "categoryId": 3,
+    "imageUrl": "sonho.jpg",
+    "available": true,
+    "createdAt": "2025-09-16T16:27:19.250Z",
+    "updatedAt": "2025-09-16T16:27:19.250Z"
+  }
+]

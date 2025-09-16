@@ -1,18 +1,19 @@
+// src/models/Product.js
 class Product {
-    constructor(id, name, description, price, categoryId, imageUrl){
+    constructor(id, name, description, price, categoryId, imageUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.categoryId = categoryId;
         this.imageUrl = imageUrl;
-
         this.available = true;
         this.createdAt = new Date();
         this.updatedAt = new Date();
     }
-    toJSON(){
-        return{
+
+    toJSON() {
+        return {
             id: this.id,
             name: this.name,
             description: this.description,
@@ -24,33 +25,24 @@ class Product {
             updatedAt: this.updatedAt
         };
     }
-    update(newData){
-        if(newData.name) this.name = newData.name;
-        if(newData.description) this.description = newData.description;
-        if(newData.price) this.price = newData.price;
-        if(newData.categoryId) this.categoryId = newData.categoryId;
-        if(newData.imageUrl) this.imageUrl = newData.imageUrl;
-        if(newData.available) this.available = newData.available;
-         this.updatedAt = new Date();
+
+    update(newData) {
+        if (newData.name) this.name = newData.name;
+        if (newData.description) this.description = newData.description;
+        if (newData.price) this.price = newData.price;
+        if (newData.categoryId) this.categoryId = newData.categoryId;
+        if (newData.imageUrl) this.imageUrl = newData.imageUrl;
+        if (newData.available !== undefined) this.available = newData.available;
+        this.updatedAt = new Date();
     }
-    getFormattedPrice(){
-        return `R$ ${this.price.toFixed(2).replace('.', '.')}`;
+
+    getFormattedPrice() {
+        return `R$ ${this.price.toFixed(2).replace('.', ',')}`;
     }
-    isAvailable(){
+
+    isAvailable() {
         return this.available === true;
     }
 }
+
 module.exports = Product;
-
-const Product = require('./models/Product');
-const paoFrances = new Product(
-    1,
-    'Pão Francês',
-    'Pão fresquinho do dia',
-    0.50,
-    1,
-    'pao-frances.jpg'
-);
-
-console.log('Preço bonitinho', paoFrances.getFormattedPrice());
-console.log('Está disponível?', paoFrances.isAvailable());
